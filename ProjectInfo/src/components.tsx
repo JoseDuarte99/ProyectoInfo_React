@@ -21,9 +21,9 @@ export function ProductCard(props: ProductCardProps) {
     const { img, title,previousPrice, price, priceInfo, shippingInfo } = props
     
     return (
-        <div className="bg-white p-1">
+        <div className=" pl-2 pr-2 pb-2">
             <img width={250} height={250} src={img} alt={title} />
-            <h3 className="text-neutral-700 text-left text-xl mb-4">
+            <h3 className="text-neutral-700 text-left text-medium mb-4">
                 {title}
             </h3>
             <p className="text-neutral-500 text-left text-xs line-through">
@@ -43,15 +43,29 @@ export function ProductCard(props: ProductCardProps) {
 };
 
 
-// COMPONENTE PRODUCT-CARD
+// COMPONENTE TITLE-SECTION
 export function TitleSection(props: TitleSectionProps) {
     const {title, anchor} = props
 
     return (
-        <div className="bg-white p-1">
+        <div className="pl-2">
             <h2  className="text-black text-left text-3xl font-medium pt-1">
-                {title}<a href="#" className="text-sky-600 text-left text-lg pl-4">{anchor}</a>
+                {title}<a href="#" className="text-sky-800 text-left text-sm pl-4">{anchor}</a>
             </h2>
+        </div>
+    );
+};
+
+// COMPONENTE SECTION
+export function Section({ titleSection, children }: { titleSection: React.ReactNode; children: React.ReactNode }) {
+    return (
+        <div className="bg-white p-2 m-10 rounded-lg shadow-gray-300 shadow-lg ">
+            <>
+                {titleSection}
+            </>
+            <div className="flex">
+                {children}
+            </div>
         </div>
     );
 };
