@@ -1,40 +1,23 @@
-import { ProductCard } from "./components"
+import { ProductCard, TitleSection } from "./components"
+import imgSrc from "./assets/OIP.jpg";
 
 function App() {
   return (
   <>
-            <ProductCard 
-                img="/producto1.jpg" 
-                title="Auriculares Bluetooth" 
-                price={5999} 
-                priceInfo="Descuento exclusivo" 
-                shippingInfo="Envío gratis" 
-            />
-            
-            <ProductCard 
-                img="/producto1.jpg" 
-                title="Zapatillas deportivas" 
-                price={18999} 
-                priceInfo="12 cuotas sin interés" 
-                shippingInfo="Llega en 24hs" 
-            />
+    <TitleSection 
+    title="Más vendidos de la semana en Tecnologia"
+    anchor="Ir a Más vendidos"
+    />
+    <ProductCard 
+        img={imgSrc}
+        title="Auriculares Bluetooth"
+        previousPrice={9999}
+        price={5999} 
+        priceInfo="Descuento exclusivo" 
+        shippingInfo="Envío gratis" 
+    />
 
-            <ProductCard 
-                img="/producto1.jpg" 
-                title="Smartwatch fitness" 
-                price={24999} 
-                priceInfo="10% off con Mercado Pago" 
-                shippingInfo="Retiro en tienda disponible" 
-            />
-
-            <ProductCard 
-                img="/producto1.jpg" 
-                title="Mochila impermeable" 
-                price={7999} 
-                priceInfo="3 cuotas sin interés" 
-                shippingInfo="Envío rápido" 
-            />
-        </>
+  </>
   )
 }
 
