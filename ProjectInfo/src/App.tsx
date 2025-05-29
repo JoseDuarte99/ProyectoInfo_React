@@ -1,11 +1,14 @@
-// import { ProductCard, TitleSection, Section, Navbar} from "./components"
-import {Navbar} from "./components"
-// import imgSrc from "./assets/OIP.jpg";
+import { ProductCard, TitleSection, Section, Header} from "./components"
+
+import imgSrc from "./assets/OIP.jpg";
+
+
 
 function App() {
   return (
     <>
-    {/* <Section titleSection={<TitleSection title="Más vendidos de la semana en Tecnología" link="Ir a Más vendidos" />}>
+    <Header />
+    <Section titleSection={<TitleSection title="Más vendidos de la semana en Tecnología" link="Ir a Más vendidos" />}>
       <ProductCard 
       img={imgSrc}
       title="Auriculares Bluetooth"
@@ -50,11 +53,7 @@ function App() {
       priceInfo="Descuento exclusivo" 
       shippingInfo="Envío gratis" 
       />
-    </Section> */}
-
-
-    <Navbar />
-
+    </Section>
     </>
   )
 }
