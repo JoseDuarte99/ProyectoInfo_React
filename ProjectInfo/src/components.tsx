@@ -1,4 +1,4 @@
-import imgIcon from "./assets/LogoMeLi.svg";
+
 
 // TIPADO DE PRODUCT-CARD
 type ProductCardProps = {
@@ -78,15 +78,26 @@ export function Section(props: SectionProps) {
 
 
 // COMPONETE SEARCH
-export function Search(){
+// export function Search(){
     
-    return(
-        <>
-        <input className=" bg-white text-sm text-gray-700 shadow-gray-500 shadow-sm placeholder-gray-400 pl-4 ml-10 w-80 h-9 outline-1 outline-blue-500 " type="search" placeholder="Buscar productos, marcas y más…" />
-        </>
-    );
-};
+//     return(
+//         <>
+//         <input className=" bg-white text-lg text-gray-700 shadow-gray-500 shadow-sm placeholder-gray-600 pl-4 ml-10 w-150 h-12 outline-none outline-blue-500 " type="search" placeholder="Buscar productos, marcas y más…" />
+//         </>
+//     );
+// };
 
+export function Search(){
+    return(
+        <div className="flex items-center bg-white shadow-gray-500 shadow-sm rounded-md">
+            <input 
+                className="text-lg text-gray-700 placeholder-gray-600 pl-4 w-150 h-12 outline-none" 
+                type="search" 
+                placeholder="Buscar productos, marcas y más…" 
+            />
+        </div>
+    );
+}
 
 // COMPONETE NAVBAR
 export function Navbar(){
@@ -98,21 +109,6 @@ export function Navbar(){
 };
 
 
-// COMPONETE HEADER
-export function Header(){
-    
-    return(
-        <div className="absolute bg-yellow-300 top-0 left-0 w-screen pl-3 pr-3 pt-2 pb-1">
-            <div className="flex">
-                <img className="ml-15" width={130} src={imgIcon} alt="Logo de Mercado Libre" />
-                <Search />
-            </div>
-            <>
-                <Navbar />
-            </>
-        </div>
-    );
-};
 
 
 
