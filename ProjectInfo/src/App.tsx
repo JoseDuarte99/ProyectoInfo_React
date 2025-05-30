@@ -3,6 +3,7 @@ import { ProductCard, TitleSection, Section, Search, Navbar} from "./components"
 import imgSrc from "./assets/OIP.jpg";
 import imgIcon from "./assets/LogoMeLi.svg";
 import imgShippingFree from "./assets/EnvioGratis.webp";
+import imgSearch from "./assets/lupa.svg";
 
 // COMPONETE HEADER MERCADO LIBRE
 export function Header(){
@@ -10,9 +11,12 @@ export function Header(){
     return(
         <div className="absolute bg-yellow-300 top-0 left-0 w-screen pl-5 pt-2 pb-1">
             <div className="flex">
-                <img className="ml-15 mr-4" width={160} src={imgIcon} alt="Logo de Mercado Libre" />
-                <Search />
-                <img className="ml-15 mr-4  h-[2.9rem]" src={imgShippingFree} alt="Logo de Mercado Libre" />
+                <a href="#"><img className="ml-15 mr-12" width={160} src={imgIcon} alt="Logo de Mercado Libre" /></a>
+                <Search 
+                  placeholder="Buscar productos, marcas y más…" 
+                  imgSearch= {imgSearch}
+                />
+                <a href="#"><img className="ml-20 mr-4  h-[2.8rem]" src={imgShippingFree} alt="Logo de Mercado Libre" /></a>
             </div>
             <>
                 <Navbar />

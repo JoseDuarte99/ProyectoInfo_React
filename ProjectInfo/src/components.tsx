@@ -1,4 +1,4 @@
-
+import imgSearch from "./assets/lupa.svg";
 
 // TIPADO DE PRODUCT-CARD
 type ProductCardProps = {
@@ -21,6 +21,19 @@ type SectionProps = {
     titleSection: React.ReactNode;
     children: React.ReactNode;
 };
+
+// TIPADO DE SEARCH
+type SearchProps = {
+    placeholder?: string;
+    imgSearch?: string;
+};
+
+// TIPADO DE BUTTON-CUSTOM
+type ButtonCustomProps = {
+    textButton?: string;
+    imgButton?: string;
+};
+
 
 // COMPONENTE PRODUCT-CARD
 export function ProductCard(props: ProductCardProps) {
@@ -65,7 +78,7 @@ export function TitleSection(props: TitleSectionProps) {
 
 // COMPONENTE SECTION
 export function Section(props: SectionProps) {
-    const { titleSection, children} = props
+    const { titleSection, children } = props
     return (
         <div className=" bg-white p-2 m-10 rounded-lg shadow-gray-300 shadow-lg ">
         <>{titleSection}</>
@@ -76,35 +89,58 @@ export function Section(props: SectionProps) {
     );
 };
 
-
-// COMPONETE SEARCH
-// export function Search(){
-    
-//     return(
-//         <>
-//         <input className=" bg-white text-lg text-gray-700 shadow-gray-500 shadow-sm placeholder-gray-600 pl-4 ml-10 w-150 h-12 outline-none outline-blue-500 " type="search" placeholder="Buscar productos, marcas y más…" />
-//         </>
-//     );
-// };
-
-export function Search(){
+// COMPONENTE SEARCH
+export function Search(props: SearchProps){
+    const { placeholder, imgSearch } = props
     return(
-        <div className="flex items-center bg-white shadow-gray-500 shadow-sm rounded-md">
+        <div className="flex items-center bg-white shadow-gray-400 shadow-sm">
             <input 
-                className="text-lg text-gray-700 placeholder-gray-600 pl-4 w-150 h-12 outline-none" 
+                className="text-lg text-gray-700 placeholder-gray-400 pl-4 w-150 h-12 outline-none" 
                 type="search" 
-                placeholder="Buscar productos, marcas y más…" 
+                placeholder={ placeholder }
             />
+            <button type="submit" className="cursor-pointer !bg-white rounded-none p-0">
+                <img className="h-7 m-2 pl-3 pb-1 pr-2 border-l-1 border-l-gray-200" src={imgSearch} alt="Lupa" />
+            </button>
         </div>
     );
 }
 
-// COMPONETE NAVBAR
+// COMPONETE NAVBAR 
+export function ButtonCustom(props: ButtonCustomProps){
+    const { textButton, imgButton } = props
+    return(
+        <button className="cursor-pointer p-2" type="button">
+            { textButton }
+            {imgButton !== undefined ? <img src={ imgButton } alt="" /> : ""}
+        </button>
+    );
+};
+
+
+// COMPONETE NAVBAR 
 export function Navbar(){
     
     return(
+        <>
+            <div className="flex justify-center ">
+                < ButtonCustom textButton="Capital Federal"/>
+                < ButtonCustom textButton="Categorías"/>
+                < ButtonCustom textButton="Ofertas"/>
+                < ButtonCustom textButton="Cupones"/>
+                < ButtonCustom textButton="Supermercado"/>
+                < ButtonCustom textButton="Moda"/>
+                < ButtonCustom textButton="Mercado Play"/>
+                < ButtonCustom textButton="Vender"/>
+                < ButtonCustom textButton="Ayuda"/>
+                < ButtonCustom textButton="Creá tu cuenta"/>
+                < ButtonCustom textButton="Ingresá"/>
+                < ButtonCustom textButton="Mis compras"/>
+                < ButtonCustom imgButton={ imgSearch }/>
+            </div>
+        </>
+
         
-        <><p className="text-xl text-black" >Botones</p></>
     );
 };
 
